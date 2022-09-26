@@ -1,0 +1,21 @@
+def brainmem(pt):
+    x = -1
+    while pt !=brain1[x][0]:
+        x += 1
+        if x + 1 > len(brain1):
+            return "idk"
+        if pt ==brain1[x][0]:
+            return brain1[x][1]           
+print(" _____ ___  __  __ ")
+print("|_   _/ _ \|  \/  |")
+print("  | || | | | |\/| |")
+print("  | || |_| | |  | |")
+print("  |_| \___/|_|  |_|")
+awake = 1
+while awake == 1:
+    word = input()
+    
+    triger1 = brainmem(word)
+    print(triger1)
+    if triger1 == "goodbye":
+        awake = 0  
