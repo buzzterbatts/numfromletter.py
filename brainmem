@@ -1,11 +1,64 @@
+import socket 
+import random 
+
+to_do1 = " biology B: two a day \n Cybersecurity half a day \n bitcoin one a day \n Language arts: half a day \n Algebra one a day \n History of the holocaust one every three days"
+
+def findIPhost():
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    print(f"Hostname: {hostname}")
+    print(f"IP Address: {ip_address}")
+    
+brain2 =[
+    ["hi", ["hello", "hi", "how are you"]],
+    ["how are you", ["im a robot", "im not real", "why do you care"]],
+    ["good", ["leave me alone", "i dont care", "what do you need"]],
+    ["im bored", ["me too", "leave me alone", "who cares"]],
+    ["are you real", ["no", "not at all", "no thankfully"]],
+    ["what do you do", ["serve butter", "not much", "who cares"]],
+    ["whats you name", ["tom", "tom bot", "hi im tom"]],
+    ["who made you", ["aidyn", "i dont want to say", "why do you care"]],
+    ["whats up", ["the sky", "nothing much", "not much"]],
+    ["turn off", ["goodbye", "goodbye", "goodbye"]],
+    ["are you real", ["no", "are you", "no but whats 145684*4354333 equal thats right lets stick to what were good at"]],
+    ["find ip", ["ip", "ip", "ip"]],
+    ["to do", [to_do1, to_do1, to_do1]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["", ["", "", ""]],
+    ["good", ["what do you need", "im bored", "cool"]],
+    ["bihjuh","nul"]#why will this return none in terminal but work as brain1[12][1]?
+]
+#pkj = brain2[1][1][0]
+#used to find response 
+# first number is row on list
+# second number is if you want to
+#pick the greeting with 0 or the
+#response with 1
+#third number is which word you want to pick in row and list
+#print(pkj)
+#jkde = brain2[1][0]
+#used to compare input to response
+
+def ranword(num):
+    x = random.randint(0, 2)
+    wordback = brain2[num][1][x]
+    return wordback
+
 def brainmem(pt):
     x = -1
-    while pt !=brain1[x][0]:
+    while pt !=brain2[x][0]:
         x += 1
-        if x + 1 > len(brain1):
-            return "idk"
-        if pt ==brain1[x][0]:
-            return brain1[x][1]           
+        if x + 1 > len(brain2):
+            return "you must think im really smart try somthing simpler"
+        if pt ==brain2[x][0]:
+            return ranword(x)           
 print(" _____ ___  __  __ ")
 print("|_   _/ _ \|  \/  |")
 print("  | || | | | |\/| |")
@@ -18,4 +71,6 @@ while awake == 1:
     triger1 = brainmem(word)
     print(triger1)
     if triger1 == "goodbye":
-        awake = 0  
+        awake = 0
+    if triger1 == "ip":
+        findIPhost()
